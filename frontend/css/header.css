@@ -1,0 +1,46 @@
+/* Titres principaux */
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #6b4f3b; 
+}
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1em;
+  color: #6b4f3b;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.banner-text h2 {
+  font-size: 2em;
+  margin: 0;
+  color: #fff;
+}
+
+.banner-text p {
+  font-size: 1.2em;
+  color: #fff;
+}

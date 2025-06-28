@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nom": "Bougie Vanille",
+    "prix": 12.99,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 2,
+    "nom": "Bougie Lavande",
+    "prix": 14.50,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 3,
+    "nom": "Bougie Cèdre",
+    "prix": 13.75,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 4,
+    "nom": "Bougie Menthe",
+    "prix": 11.99,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 5,
+    "nom": "Bougie Citronnelle",
+    "prix": 15.00,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 6,
+    "nom": "Bougie Cannelle",
+    "prix": 14.25,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 7,
+    "nom": "Bougie Rose",
+    "prix": 13.49,
+    "image": "images/bougie-cafe.jpg"
+  },
+  {
+    "id": 8,
+    "nom": "Bougie Eucalyptus",
+    "prix": 12.75,
+    "image": "images/bougie-cafe.jpg"
+  }
+]
