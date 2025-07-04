@@ -34,22 +34,38 @@ document.getElementById("formConnexion").addEventListener("submit", function (e)
       return;
     }
   
-    // ✅ Si tout est bon,affiche un message de succès (connexion simulée ici)
+    //  Si tout est bon,affiche un message de succès (connexion simulée ici)
     message.textContent = "Connexion réussie !";
     message.style.color = "green";
   
-    fetch('http://localhost:3000/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ nom, email, password })
-    })
-    .then(async res => {
-      const data = await res.json();
-      message.textContent = data.message;
-      message.style.color = res.ok ? "green" : "red";
-    })
-    
+
+    //on envoi les données d'inscription au backend via la route /auth/register
+  
+  fetch('http://localhost:3000/auth/connexion', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    // nos  données sont envoyées sous forme JSON
+    body: JSON.stringify({ email, password })
+  })
+  .then(async res => {//on  Récupère la réponse du serveur
+
+    const data = await res.json();
+    message.textContent = data.message;
+    message.style.color = res.ok ? "green" : "red";
+
+    //  Sauvegarde de l'utilisateur dans localStorage si connexion réussie
+    if (res.ok) {
+      localStorage.setItem("utilisateur", JSON.stringify(data));
+      window.location.href = "index.html"; // Redirection après connexion
+    }
+  })
+   //  Gestion des erreurs réseau ou serveur
+  .catch(() => {
+    message.textContent = "Erreur de connexion au serveur.";
+    message.style.color = "red";
   });
+  
+});
   

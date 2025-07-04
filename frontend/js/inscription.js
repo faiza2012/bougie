@@ -7,6 +7,8 @@ document.getElementById("formInscription").addEventListener("submit", function (
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirm").value;
+    const role = document.getElementById("role").value;
+
     const message = document.getElementById("message");
   
     // Expression régulière simple pour valider un e-mail
@@ -43,7 +45,8 @@ document.getElementById("formInscription").addEventListener("submit", function (
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nom, email, password })
+      body: JSON.stringify({ nom, email, password, role })
+
     })
     .then(async res => {
       const data = await res.json();

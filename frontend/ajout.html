@@ -9,6 +9,15 @@
   <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/produits.css">
   <link rel="stylesheet" href="css/footer.css">
+  <script>
+    // Vérifie le rôle de l'utilisateur dans le stockage local
+    const role = localStorage.getItem("role");
+  
+    if (role !== "admin") {
+      alert("Accès interdit : cette page est réservée aux administrateurs.");
+      window.location.href = "index.html";
+    }
+  </script>
   
   
 </head>
@@ -68,6 +77,6 @@
     <p class="copyright">© 2025 Boutique de Bougies. Tous droits réservés.</p>
   </footer>
   
-  <script src="js/ajout.js"></script>
+  <script src="js/ajout.js" defer></script>
 </body>
 </html>
