@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Confirmation de commande</title>
+</head>
+<body>
+  <h1>Merci pour votre commande !</h1>
+  <p>Voici un résumé :</p>
+  <div id="resume"></div>
+
+  <script>
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    const resume = document.getElementById("resume");
+    let total = 0;
+
+    panier.forEach(produit => {
+      const p = document.createElement("p");
+      p.textContent = `${produit.nom} - ${produit.prix.toFixed(2)} $`;
+      resume.appendChild(p);
+      total += produit.prix;
+    });
+
+    const totalEl = document.createElement("h3");
+    totalEl.textContent = `Total : ${total.toFixed(2)} $`;
+    resume.appendChild(totalEl);
+
+    // Vider le panier après la commande
+    localStorage.removeItem("panier");
+  </script>
+</body>
+</html>

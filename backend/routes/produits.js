@@ -23,5 +23,28 @@ router.get('/', (req, res) => {
     }
   });
 });
+function verifierAdmin(req, res, next) {
+  const role = req.headers['x-user-role']; // On passe le rôle dans l'en-tête
+
+  if (role === 'admin') {
+    next(); // L'utilisateur est admin, il peut continuer
+  } else {
+    return res.status(403).json({ message: "Accès refusé : réservé aux admins." });
+  }
+}
+// Ajout de produit (admin seulement)
+router.post('/', verifierAdmin, (req, res) => {
+  // logique d'ajout produit
+});
+
+// Modification de produit
+router.put('/:id', verifierAdmin, (req, res) => {
+  // logique de modification
+});
+
+// Suppression de produit
+router.delete('/:id', verifierAdmin, (req, res) => {
+  // logique de suppression
+});
 
 module.exports = router;
